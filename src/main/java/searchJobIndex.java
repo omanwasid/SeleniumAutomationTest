@@ -1,25 +1,23 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 
-import java.nio.ByteOrder;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class searchJobIndex {
 
     public static void main(String[] args) {
-        //By loginLinkLocator = By.xpath("//*[@id=\"u_0_1e_pg\"]");
+
+        // Define Locators
+
         By searchInputLocator = By.xpath("//*[@id=\"search-component\"]/div[1]/div[1]/input");
-        By searchAreaInputLocator = By.xpath("//input[@placeholder='Select or enter areas']");
-        //By userEmailInputLocator = By.xpath("//input[@name='reg_email__']");
-
-        //By userPasswordInputLocator = By.xpath("//input[@name='reg_passwd__']");
-        //By userReEmailInputLocator = By.cssSelector("//input[@id='u_0_v_/D']");
-
+        By searchAreaInputLocator = By.xpath("//*[@id=\"search-component\"]/div[1]/div[2]/span/span[1]/span/ul/li/input");
+        By userEmailInputLocator = By.xpath("//*[@id=\"jobagent_form\"]/div[1]/p[2]/div/input");
+        By clickButtonLocator = By.xpath("//button[@class='btn btn-primary btn-sm']");
         By cookiePopUpLocator = By.xpath("//button[@id='jix-cookie-consent-accept-all']");
+
+        // Creating driver object
         String currentDir = System.getProperty("user.dir");
         System.out.println("Current dir using System:" + currentDir);
         System.setProperty("webdriver.chrome.driver", currentDir + "\\src\\main\\resources\\driver\\chromedriver.exe");
@@ -27,37 +25,23 @@ public class searchJobIndex {
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //driver.findElement(loginLinkLocator).click();
-
+        //setting up url
         driver.get("https://www.jobindex.dk/");
+
+        // launch chrome and execute the test steps
         driver.findElement(cookiePopUpLocator).click();
-
-
         driver.findElement(searchInputLocator).sendKeys("Selenium Webdriver");
-        //driver.findElement(searchAreaInputLocator).click();
-        //driver.findElement(searchAreaInputLocator).sendKeys("Storkøbenhavn");
-        //driver.findElement(lastNameInputLocator).sendKeys("Wasid");
-        //driver.findElement(userEmailInputLocator).sendKeys("wasid@ymail.com");
-        //driver.findElement(userPasswordInputLocator).sendKeys("dS3v8mma");
-        //driver.findElement(userReEmailInputLocator).sendKeys("wasid@ymail.com");
-
-        //Select DropDown Area
-        WebElement drpAreaElm = driver.findElement(By.id("day"));
-        Select drpArea = new Select(drpAreaElm);
-        drpArea.selectByVisibleText("Storkøbenhavn");
-
-        //Select DropDown Month
-        //WebElement drpMonthElm = driver.findElement(By.id("month"));
-        //Select drpMonth = new Select(drpMonthElm);
-        //drpMonth.selectByVisibleText("Dec");
-
-        //Select DropDown Year
-        //WebElement drpYearElm = driver.findElement(By.id("year"));
-        //Select drpYear = new Select(drpYearElm);
-        //drpYear.selectByVisibleText("1980");
-
-
+        driver.findElement(searchAreaInputLocator).click();
+        driver.findElement(searchAreaInputLocator).sendKeys("Storkøbenhavn");
+        driver.findElement(searchInputLocator).sendKeys(Keys.ARROW_DOWN);
+        driver.findElement(searchInputLocator).sendKeys(Keys.ENTER);
+        driver.findElement(userEmailInputLocator).sendKeys("wasid@ymail.com");
+        driver.findElement(clickButtonLocator).click();
 
     }
 }
+
+//s
+//S
+
 
