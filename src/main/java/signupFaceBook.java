@@ -19,7 +19,9 @@ public class signupFaceBook {
         By userPasswordInputLocator = By.xpath("//input[@name='reg_passwd__']");
         //By userReEmailInputLocator = By.cssSelector("//input[@id='u_0_v_/D']");
 
-        By cookiePopUpLocator = By.xpath("//button[@title='Accept All']");
+        //By cookiePopUpLocator = By.xpath("//button[@title='Accept All']");
+        By cookiePopUpLocator = By.cssSelector("registration UIPage_LoggedOut hasBanner _-kb _605a b_c3pyn-ahh chrome webkit win x1 Locale_en_GB cores-gte4 hasCookieBanner _19_u hasAXNavMenubar");
+
         String currentDir = System.getProperty("user.dir");
         System.out.println("Current dir using System:" + currentDir);
         System.setProperty("webdriver.chrome.driver", currentDir + "\\src\\main\\resources\\driver\\chromedriver.exe");
@@ -30,12 +32,13 @@ public class signupFaceBook {
         //driver.findElement(loginLinkLocator).click();
 
         driver.get("https://en-gb.facebook.com/r.php?locale=en_GB&display=page");
-        driver.findElement(cookiePopUpLocator).click();
+        //driver.findElement(cookiePopUpLocator).click();
         driver.findElement(firstNameInputLocator).sendKeys("Muhammad");
         driver.findElement(lastNameInputLocator).sendKeys("Wasid");
         driver.findElement(userEmailInputLocator).sendKeys("wasid@ymail.com");
         driver.findElement(userPasswordInputLocator).sendKeys("dS3v8mma");
         //driver.findElement(userReEmailInputLocator).sendKeys("wasid@ymail.com");
+        driver.findElement(cookiePopUpLocator).click();
 
         //Select DropDown Day
         WebElement drpDateElm = driver.findElement(By.id("day"));

@@ -37,6 +37,6 @@ public class registrationJobIndex {
             System.out.println("Your Test Failed");
         }
         //close chrome
-        driver.close();
+        //driver.close();
     }
 }

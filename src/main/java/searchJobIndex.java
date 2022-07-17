@@ -11,11 +11,11 @@ public class searchJobIndex {
 
         // Define Locators
 
-        By searchInputLocator = By.xpath("//*[@id=\"search-component\"]/div[1]/div[1]/input");
-        By searchAreaInputLocator = By.xpath("//*[@id=\"search-component\"]/div[1]/div[2]/span/span[1]/span/ul/li/input");
-        By userEmailInputLocator = By.xpath("//*[@id=\"jobagent_form\"]/div[1]/p[2]/div/input");
-        By clickButtonLocator = By.xpath("//button[@class='btn btn-primary btn-sm']");
-        By cookiePopUpLocator = By.xpath("//button[@id='jix-cookie-consent-accept-all']");
+        By searchInputLocator       = By.xpath("//*[@id=\"search-component\"]/div[1]/div[1]/input");
+        By searchAreaInputLocator   = By.xpath("//*[@id=\"search-component\"]/div[1]/div[2]/span/span[1]/span/ul/li/input");
+        By userEmailInputLocator    = By.xpath("//*[@id=\"jobagent_form\"]/div[1]/p[2]/div/input");
+        By clickButtonLocator       = By.xpath("//button[@class='btn btn-primary btn-sm']");
+        By cookiePopUpLocator       = By.xpath("//button[@id='jix-cookie-consent-accept-all']");
 
         // Creating driver object
         String currentDir = System.getProperty("user.dir");
@@ -41,7 +41,5 @@ public class searchJobIndex {
     }
 }
 
-//s
-//S
 
 

@@ -6,7 +6,7 @@ public class jobIndexLogin {
 
         public static void main(String[] args) {
             // Locators
-            By loginLinkLocator = By.cssSelector("body > div.site-wrapper > nav.site-header > div.container-fluid.container-navigation > div > div > div.col-md-3.d-none.d-lg-block > nav > ul > li:nth-child(1) > a");
+            By loginLinkLocator = By.xpath("/html[1]/body[1]/div[1]/nav[1]/div[1]/div[1]/div[1]/div[1]/nav[1]/ul[1]/li[1]/a[1]");
             By cookiePopUpLocator =  By.cssSelector("#jix-cookie-consent-accept-all");
             By loginUserNameInputLocator = By.cssSelector("input#email");
             By loginPasswordInputLocator = By.cssSelector("input#password");
@@ -49,6 +49,6 @@ public class jobIndexLogin {
                 e.printStackTrace();
             }
             //close chrome
-            driver.close();
+            //driver.close();
         }
     }

@@ -12,7 +12,9 @@ public class handleCheckBox {
         System.setProperty("webdriver.chrome.driver", currentDir + "\\src\\main\\resources\\driver\\chromedriver.exe");
         WebDriver driver=new ChromeDriver();
         driver.get("https://itera-qa.azurewebsites.net/home/automation");
+
         // Select Specific Check box.
+
         driver.findElement(By.xpath("//input[@id='female']")).click();
         driver.findElement(By.xpath("//input[@id='monday']")).click();
         driver.findElement(By.xpath("//input[@id='tuesday']")).click();
@@ -21,8 +23,10 @@ public class handleCheckBox {
         driver.findElement(By.xpath("//input[@id='friday']")).click();
         driver.findElement(By.xpath("//input[@id='saturday']")).click();
         driver.findElement(By.xpath("//input[@id='sunday']")).click();
+
         // Select All Check boxes.
         //driver.findElement(By.xpath("//input[@id='monday']")).click();
+
         List<WebElement> checkboxes= (List<WebElement>) driver.findElement(By.xpath("//input[@type='checkbox' and contains(@id,'day')]"));
         System.out.println("Total Number of Check Boxes:"+ checkboxes.size());
         for(int i=0;i<=checkboxes.size();i++)

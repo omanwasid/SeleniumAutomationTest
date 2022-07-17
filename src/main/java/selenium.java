@@ -46,6 +46,6 @@ public class selenium {
             e.printStackTrace();
         }
         //close chrome
-        driver.close();
+        //driver.close();
     }
 }
