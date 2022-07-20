@@ -14,7 +14,8 @@ public class HandleBootstrapDropDown {
         driver.get("https://www.hdfcbank.com/");
         driver.manage().window().maximize();
 
-        List<WebElement> ProductTypes= (List<WebElement>) driver.findElement(By.xpath("//ul[@class='dropdown1 dropdown-menu']/li")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[12]/div[1]/div/div/div[2]/div[1]/div[3]/div/div/div/div/div/div[2]/div/a")).click();
+         List<WebElement> ProductTypes = (List<WebElement>) driver.findElement(By.xpath("//*[@id=\"main\"]/div[2]/div[12]/div[1]/div/div/div[2]/div[1]/div[3]/div/div/div/div/div/div[2]/div"));
         System.out.println("Number of Options:"+ProductTypes.size());
 
         for (WebElement pType:ProductTypes)
