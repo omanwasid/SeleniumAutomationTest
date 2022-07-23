@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,6 +16,8 @@ public class HandlejQueryDropDown {
         driver.get("https://www.jqueryscript.net/demo/Drop-Down-Combo-Tree/");
         driver.manage().window().maximize();
         //driver.manage().timeouts().implicitlyWait(Duration.ofMinutes(1));
+
+        driver.findElement(By.id("justAnInputBox")).click();
 
 
 
